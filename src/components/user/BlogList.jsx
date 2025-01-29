@@ -38,7 +38,7 @@ function BlogList() {
   return (
     <div className="space-y-8 py-8">
        <div className="border-b">
-        
+
        </div>
       {blogs.map((blog) => (
         <div key={blog.id} className="flex justify-between items-start gap-8"
@@ -53,8 +53,9 @@ function BlogList() {
             <p className="text-gray-600 mb-4">{extractSubtitle(blog.contents)}</p>
             <div className="flex items-center gap-4 text-gray-500">
               <span>{new Date(blog.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-              <span>Views: 0</span>
-              <span>Comments: 0</span>
+              <span>Likes: {blog.total_likes}</span>
+              <span>Dislikes: {blog.total_dislikes}</span>
+              <span>Comments: {blog.total_comments}</span>
               <div className="flex-1" />
               <button className="p-2 hover:bg-gray-100 rounded">
                 <span>⋮</span>
